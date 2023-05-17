@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: PCSD Directory Report PAge
+Plugin Name: PCSD Directory Report Page
 Plugin URI: 
 Description: Creates a dashboard page to display our report that checks for active emails in our website directory
 Version: 1.0
@@ -23,8 +23,6 @@ function pcsd_dir_admin_page()
 		date_default_timezone_set('America/Denver');
 		if (file_exists($dirReportPath)) {
 			$modification_time = filemtime($dirReportPath);
-		
-			// echo 'The file was last modified on: ' . date('Y', $modification_time);
 		} else {
 			echo 'File not found.';
 		}
@@ -33,7 +31,7 @@ function pcsd_dir_admin_page()
 		?>
 		<p>This page will show you emails found in the website directory that are not currently active/found in the vault.</p>
 		<?= '<strong>This report was last updated on:</strong> ' . date('Y-m-d H:i:s', $modification_time); ?>
-		
+
 		<?php echo '<br><br>' . $dircheck_mainweb; ?>
 	</div> <?php
 
